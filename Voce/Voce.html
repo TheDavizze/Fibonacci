@@ -8,7 +8,7 @@
     <h1><b>Bilancia di Fibonacci</b></h1>
 	<h4> Spremiti le meningi e trova una soluzione al problema</h4>
     
-    <h3>Clicca sull'immagine del microfono per consentire al sito di utilizzare il tuo microfono, successivamente dichiara la soluzione al problema. Elenca i numeri in ordine crescente.</h3>
+    <h3>Clicca sull'immagine del microfono per consentire al sito di utilizzare il tuo microfono, successivamente dichiara la soluzione al problema. Elenca i numeri in ordine crescente o decrescente.</h3>
     <p style="background-color : black;"><br>
     </p>
     <p style="background-color : white;"><br>
@@ -100,17 +100,28 @@
 		{
 		var x = document.frase.testo.value;
 		
-		if x= "139" 
+		switch (x) {
 				
-		z =  "Risposta esatta!";
+		case (x= "139"):
+		z =  "Risposta esatta";
+		document.getElementById("control1").value = "true";
+		document.getElementById("control2").value = "false";
+		document.getElementById("btnON").click();
+		break;
+		
+		case (x="931"):
+		z = "Risposta esatta";
 		document.getElementById("control1").value = "true";
 		document.getElementById("control2").value = "false";
 		document.getElementById("btnON").click();
 		
-		
-	        else :
+	        default :
 		z = "Risposta sbagliata, tenta di nuovo";
 		x=" ";
+		}
+		
+		speech(z);
+		setTimeout(function(){refresh(x);}, 3000);
 		
 		speech(z);
 		setTimeout(function(){refresh(x);}, 3000);
